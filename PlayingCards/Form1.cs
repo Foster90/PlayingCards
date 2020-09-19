@@ -13,6 +13,10 @@ using System.Windows.Forms;
 
 namespace PlayingCards
 {
+
+    
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -20,16 +24,26 @@ namespace PlayingCards
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  
+    
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            // Click on the link below to continue learning how to build a desktop app using WinForms!
-            System.Diagnostics.Process.Start("http://aka.ms/dotnet-get-started-desktop");
+            List<Card> Cards = new List<Card>();
+
+
+            Deck.FillDeck(Cards);
+            //Deck.PrintDeck(Cards);
+
+            var query = from card in Cards
+                        select card.Name;
+            
+            listBox1.DataSource = query.ToList();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Thanks!");
+
         }
     }
 }
