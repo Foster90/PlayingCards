@@ -35,11 +35,11 @@ namespace PlayingCards
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(43, 462);
+            this.button1.Location = new System.Drawing.Point(43, 417);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 99);
+            this.button1.Size = new System.Drawing.Size(199, 51);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Deal";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -53,11 +53,11 @@ namespace PlayingCards
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(334, 124);
+            this.button2.Location = new System.Drawing.Point(43, 474);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(213, 108);
+            this.button2.Size = new System.Drawing.Size(199, 51);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Shuffle";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -65,7 +65,7 @@ namespace PlayingCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 594);
+            this.ClientSize = new System.Drawing.Size(296, 594);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
