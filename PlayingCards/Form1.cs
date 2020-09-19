@@ -45,5 +45,21 @@ namespace PlayingCards
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            List<Card> Cards = new List<Card>();
+            Deck.FillDeck(Cards);
+            //Deck.PrintDeck(Cards);
+
+            Cards.ShuffleDeck();
+
+            var query = from card in Cards
+                        select card.Name;
+
+
+            listBox1.DataSource = query.ToList();
+        }
     }
 }
