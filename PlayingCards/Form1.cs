@@ -70,44 +70,29 @@ namespace PlayingCards
 
             var query = from card in Cards
                         select card.Name;
-
-
+            
             listBox1.DataSource = query.ToList();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string curItem = listBox1.SelectedItem.ToString();
-                       
-            //string selcd = "";
-            string selcd = curItem.Substring(0, 1);
-            string selcd1 = "";
-
-
-            int spaces1 = 0;
-            for (int i = 0; i < curItem.Length; i++)
-            {
-                if (curItem[i] == ' ')
-                {
-                    spaces1++;
-                }
-                if (spaces1 == 2)
-                {
-
-                    selcd1 = curItem.Substring(i +1 , 1);                  
-                    break;
-                }
-
-
-            }
-
-            //selcd = hold.Substring(1,1);
-            pictureBox1.Image = Image.FromFile(@"..\..\CardPics\JPEG\" + selcd + selcd1 + ".jpg");
+            string card = Updatepic.UpPic(curItem);                
+            pictureBox1.Image = Image.FromFile(@"..\..\CardPics\JPEG\" + card + ".jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
         }
 
-     
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            var cardlist = listBox1.Items.Cast<String>().ToList();
+
+            string s = cardlist[rnd.Next(cardlist.Count)];
+            MessageBox.Show(s);
+
+
+        }
     }
 }
