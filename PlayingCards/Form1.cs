@@ -90,7 +90,11 @@ namespace PlayingCards
             var cardlist = listBox1.Items.Cast<String>().ToList();
 
             string s = cardlist[rnd.Next(cardlist.Count)];
-            MessageBox.Show(s);
+            //MessageBox.Show(s);
+
+            s = Updatepic.UpPic(s);
+            pictureBox1.Image = Image.FromFile(@"..\..\CardPics\JPEG\" + s + ".jpg");
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
         }
