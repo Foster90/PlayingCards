@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,8 +44,20 @@ namespace PlayingCards
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //string path = Directory.GetCurrentDirectory();
+            //string path1 = path + @"\CardPics\JPEG\10C.jpg";
+            List<Card> Cards = new List<Card>();
+            Deck.FillDeck(Cards);
+            var query = from card in Cards
+                        select card.Name;
 
+            listBox1.DataSource = query.ToList();
+
+
+            
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -61,5 +74,40 @@ namespace PlayingCards
 
             listBox1.DataSource = query.ToList();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string curItem = listBox1.SelectedItem.ToString();
+                       
+            string selcd = "";
+            string hold = "";
+            string selcd1 = curItem.Substring(0, 1); 
+
+
+            int spaces1 = 0;
+            for (int i = 0; i < curItem.Length; i++)
+            {
+                if (curItem[i] == ' ')
+                {
+                    spaces1++;
+                }
+                if (spaces1 == 2)
+                {
+
+                    hold = curItem.Substring(i);                  
+                    break;
+                }
+
+
+            }
+
+            selcd = hold.Substring(1,1);
+            pictureBox1.Image = Image.FromFile(@"..\..\CardPics\JPEG\" + selcd1 + selcd + ".jpg");
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+        }
+
+     
     }
 }

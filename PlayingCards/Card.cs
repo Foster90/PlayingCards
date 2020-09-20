@@ -63,7 +63,7 @@ namespace PlayingCards
             {
                 get
                 {
-                    return NamedValue + " of  " + Suite.ToString();
+                    return NamedValue + " of " + Suite.ToString();
                 }
             }
 
