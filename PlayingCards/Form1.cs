@@ -79,9 +79,9 @@ namespace PlayingCards
         {
             string curItem = listBox1.SelectedItem.ToString();
                        
-            string selcd = "";
-            string hold = "";
-            string selcd1 = curItem.Substring(0, 1); 
+            //string selcd = "";
+            string selcd = curItem.Substring(0, 1);
+            string selcd1 = "";
 
 
             int spaces1 = 0;
@@ -94,15 +94,15 @@ namespace PlayingCards
                 if (spaces1 == 2)
                 {
 
-                    hold = curItem.Substring(i);                  
+                    selcd1 = curItem.Substring(i +1 , 1);                  
                     break;
                 }
 
 
             }
 
-            selcd = hold.Substring(1,1);
-            pictureBox1.Image = Image.FromFile(@"..\..\CardPics\JPEG\" + selcd1 + selcd + ".jpg");
+            //selcd = hold.Substring(1,1);
+            pictureBox1.Image = Image.FromFile(@"..\..\CardPics\JPEG\" + selcd + selcd1 + ".jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
