@@ -6,35 +6,31 @@ using System.Threading.Tasks;
 
 namespace PlayingCards
 {
-    class Updatepic
+    class UpdatePic
     {
-
         public static string UpPic(string curItem)
 
         {
+            string selCd = curItem.Substring(0, 1);
+            string selCd1 = "";
 
-            string selcd = curItem.Substring(0, 1);
-            string selcd1 = "";
 
-
-            int spaces1 = 0;
+            int spaces = 0;
             for (int i = 0; i < curItem.Length; i++)
             {
                 if (curItem[i] == ' ')
                 {
-                    spaces1++;
+                    spaces++;
                 }
-                if (spaces1 == 2)
+                if (spaces == 2)
                 {
-                    selcd1 = curItem.Substring(i + 1, 1);
+                    selCd1 = curItem.Substring(i + 1, 1);
                     break;
                 }
             }
 
-            return selcd + selcd1;
+            return selCd + selCd1;
 
         }
-
-
     }
 }

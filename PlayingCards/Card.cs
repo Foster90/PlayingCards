@@ -8,7 +8,6 @@ namespace PlayingCards
 {
     public class Card
     {
-
             public enum Suites
             {
                 Hearts = 0,
@@ -28,9 +27,7 @@ namespace PlayingCards
                 get;
                 set;
             }
-
-            //Used to get full name, also useful 
-            //if you want to just get the named value
+        
             public string NamedValue
             {
                 get

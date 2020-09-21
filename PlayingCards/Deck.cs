@@ -12,11 +12,8 @@ namespace PlayingCards
        
             public List<Card> Cards = new List<Card>();
            
-            
                 public static void FillDeck(List<Card> Cards)
                 {
-                    //Can use a single loop utilising the mod operator % and Math.Floor
-                    //Using divition based on 13 cards in a suited
                     for (int i = 0; i < 52; i++)
                     {
                         Card.Suites suite = (Card.Suites)(Math.Floor((decimal)i / 13));
@@ -31,9 +28,7 @@ namespace PlayingCards
             {
                 foreach (Card card in Cards)
                 {                  
-                 
-                    MessageBox.Show(card.Name);
-                    
+                   MessageBox.Show(card.Name);
                 }
             }
     }
